@@ -9,7 +9,6 @@ tags:
 categories: 
     - hexo    
 ---
-## Hexo介绍
 [Hexo](https://hexo.io/zh-cn/)是基于`NodeJs`的静态博客框架，简单、轻量，其生成的静态网页可以托管在`Github`和`Heroku`上。
 
 - 超快速度
@@ -187,7 +186,7 @@ $ hexo new page about
 
 这个about是主题文件夹下的_config.yml
 
-![](https://ww4.sinaimg.cn/large/006tNbRwgw1fb6xpz8l44j30ko0fijt6.jpg)
+<img src="https://ww4.sinaimg.cn/large/006tNbRwgw1fb6xpz8l44j30ko0fijt6.jpg" width="400" >
 
 最终生成在source目录下 一个**about**文件夹和一个**index.md**文件；
 
@@ -235,7 +234,7 @@ categories:
 [从零开始制作 Hexo 主题](http://www.ahonn.me/2016/12/15/create-a-hexo-theme-from-scratch/)
 >看这篇文章即可！
 
-## **参考文献**
+## Reference&Thanks：
 
 [Hexo官方文档，对于制作主题，选择主题，安装hexo很有帮助](https://hexo.io/zh-cn/docs/index.html)
 [简书：HEXO+Github搭建属于自己的博客](http://www.jianshu.com/p/ecd51e8ef2fa)
