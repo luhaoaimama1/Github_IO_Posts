@@ -1,6 +1,6 @@
 ---
 title: Mac下Hexo搭建博客攻略  ##文章标题
-date: 2016-12-28 13:19:37 
+date: 2016-6-2 13:19:37 
 ## updated: 2016-12-28 13:19:37
 comments: true ##开启评论 false关闭
 tags:  
