@@ -5,6 +5,7 @@ date: 2016-6-2 13:19:37
 comments: true ##开启评论 false关闭
 tags:  
     - hexo
+    - mac
 
 categories: 
     - hexo    
@@ -165,6 +166,11 @@ $ hexo s
 
 ![](https://camo.githubusercontent.com/60dd124e56fa642adc6f8f125c79702db25cc48c/687474703a2f2f7777322e73696e61696d672e636e2f6c617267652f303036744e63373967773166616f6139746d37676e6a33313276306f723432312e6a7067)
 >[主题地址](https://github.com/ahonn/hexo-theme-even)
+
+注意这个主题的tags增加`检索能力`。原因-源码:
+```
+<meta name="keywords" content="{% for tag in page.tags %}{{ tag.name }},{% endfor %}" />
+```
 
 ###这里我总结下新手所遇到的问题
 

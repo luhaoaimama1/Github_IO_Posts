@@ -5,6 +5,7 @@ date: 2016-9-17 13:19:37
 comments: true ##开启评论 false关闭
 tags:
     - android
+    - 事件传递
 
 categories:
     - android

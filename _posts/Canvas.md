@@ -5,6 +5,7 @@ date: 2016-5-18 13:19:37
 comments: true ##开启评论 false关闭
 tags:
     - android
+    - canvas
 
 categories:
     - android

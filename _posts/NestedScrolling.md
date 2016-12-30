@@ -5,6 +5,8 @@ date: 2016-10-26 13:19:37
 comments: true ##开启评论 false关闭
 tags:
     - 事件传递
+    - android
+    - NestedScrolling
 
 categories:
     - android

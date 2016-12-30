@@ -6,6 +6,7 @@ comments: true ##开启评论 false关闭
 tags:
     - android
     - 动画
+    - Rebound
 
 categories:
     - android

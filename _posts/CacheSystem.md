@@ -5,6 +5,7 @@ date: 2016-11-10 13:19:37
 comments: true ##开启评论 false关闭
 tags:
     - android
+    - drawing
 
 categories:
     - android

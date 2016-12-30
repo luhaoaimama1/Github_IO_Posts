@@ -5,6 +5,7 @@ date: 2016-8-28 13:19:37
 comments: true ##开启评论 false关闭
 tags:
     - android
+    - PorterDuffXfermode
 
 categories:
     - android
