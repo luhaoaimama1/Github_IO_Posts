@@ -115,6 +115,11 @@ switch (paint.getTextAlign()) {
 # [Demo演示图-点击可进入代码](https://github.com/luhaoaimama1/zone-sdk/blob/master/Android_Zone_Test/src/com/example/mylib_test/activity/animal/viewa/DrawTextView.java)
 <img src="https://ww1.sinaimg.cn/large/006tKfTcgw1fb921xmxlsj30fm0rgmyg.jpg" width="400" >
 
+# 对应 align 与show方法的 范例
+**实例demo**:[zone-sdk项目](https://github.com/luhaoaimama1/zone-sdk)运行后:->动画、surfaceView、绘图方面的研究->drawtext工具测试 进入即可看到;
+
+![](https://ww3.sinaimg.cn/large/006tNbRwly1fbw1kiaxghj30ka0gqjrw.jpg)
+
 # Reference&Thanks：
 
 http://blog.csdn.net/harvic880925/article/details/50423762
