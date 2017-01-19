@@ -9,21 +9,26 @@ tags:
 categories:
     - android
 ---
-
+**封装库**:[*zone-sdk*](https://github.com/luhaoaimama1/zone-sdk)
 **设计模式**:观察者模式
 **目的**：解耦，各司其职。拍照等涉及onActivityResult的封装
 <!-- more -->
+
+# 逻辑图
+![](https://ww4.sinaimg.cn/large/006tNbRwly1fbvwziewhij31kw0okgq0.jpg)
+
 # BaseActivity
 
 ActivityKinds(观察者的基类): 在使用的BaseActivity注册ActivityKinds或者移除不必要的ActivityKinds
 >专注：`onCreate`，`onResume`，`onActivityResult`，`onPause`，`onDestroy`
+
 
 | 名字 | 功能  |
 | :------------: |:---------------:| 
 | CollectionActivityKind  | 收集所有Activity用的 |  
 | FeaturesKind  |  [专门处理关于onActivityResult的](#featuresKind) | 
 | ScreenSettingKind  | setNoTitle,setFullScreen的 | 
-| SwipeBackKind  | 左滑退出Activity用的 集成别的项目~ |
+| SwipeBackKind  | 左滑退出Activity用的 集成别的项目~ [xml额外的配置,参考地址](https://github.com/Jude95/SwipeBackHelper/blob/master/README_ch.md)|
 
 >考虑兼容(简称BaseActivity)分成三块:`BaseActivity` `BaseAppCompatActivity` `BaseFragmentActivity`
 

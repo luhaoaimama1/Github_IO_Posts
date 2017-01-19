@@ -1,5 +1,5 @@
 ---
-title: Android-Canvas ##文章标题
+title: Android-Canvas系统理解 ##文章标题
 date: 2016-5-18 13:19:37
 ## updated: 2016-12-29 13:19:37
 comments: true ##开启评论 false关闭
@@ -11,6 +11,7 @@ categories:
     - android
 ---
 以我个人主观推断的Canvas工作原理
+>如果有错误请指出谢谢~
 
 <!-- more -->
 # 图片理解模型
