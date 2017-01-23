@@ -17,6 +17,25 @@ categories:
 
 <!-- more -->
 
+# 封装后的使用方式
+* 可以无限newLayer,并且每个layer对应的bitmap都有以下特征
+  * mask   PorterDuff.Mode 造作
+  * colorFilter  滤镜操作
+  * matrix  矩阵操作 既 位置,旋转缩放等。
+  
+```
+BitmapComposer.newComposition(bt.getWidth(), bt.getHeight(), Bitmap.Config.ARGB_8888)
+.clear()
+.newLayer(BitmapComposer.Layer.bitmap(bt)
+                   .colorFilter(new ColorMatrixColorFilter(colorMatrix))
+                    .matrix(matrix)  )
+.newLayer(BitmapComposer.Layer.bitmap(bt)
+          .colorFilter(new ColorMatrixColorFilter(colorMatrix))
+          .mask(wave, PorterDuff.Mode.DST_IN)
+           .matrix(matrix)    )
+.render();
+```
+
 **实例demo**:[zone-sdk项目](https://github.com/luhaoaimama1/zone-sdk)运行后:->动画、surfaceView、绘图方面的研究->波浪 进入即可看到;
 
 ![](https://ww1.sinaimg.cn/large/006tNbRwly1fbvyespt80g307i0dcax1.gif)
