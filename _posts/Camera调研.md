@@ -1,5 +1,5 @@
 ---
-title: Camera的研究 ##文章标题
+title: Camera的研究与封装 ##文章标题
 date: 2017-1-23 13:19:37
 ## updated: 2017-1-19 13:19:37
 comments: true ##开启评论 false关闭
@@ -10,6 +10,8 @@ tags:
 categories:
     - android
 ---
+
+关于坐标轴分析 最终理解 Camera 与封装lib
 
 <!-- more -->
 
@@ -133,6 +135,78 @@ temp.postTranslate操作 移动的是 camera的合成坐标系
 >这里的问题是,0度的时候 还能看到？因为你camera.translte(0,(float) axisY,0),因为Y不在是0,和摄像机不保持相同高度后是可以看到的。所以这里用matrix.postTranslate比较好
 
 >这还算好的 如果摄像机移动Z轴的话  会出现和严重的问题,因为这仅仅是一段代码补全就暂且不说了；
+
+
+# 封装Lib  
+
+> 通过上面的理解 我们开始封装lib
+ 
+1. 首先更改Camera视角的坐标系为view坐标系 而不是camera的视角。
+2.  我们希望setPivot(float px, float py)或者setPivot(PivotType pivotType)的预设方式;
+```
+  /**
+     * 0---1---2
+     * |       |
+     * 7   8   3
+     * |       |
+     * 6---5---4
+     */
+    public enum PivotType {
+        None,
+        LeftTop, LeftCenter, LeftBottom,
+        RightTop, RightCenter, RightBottom,
+        CenterTop, Center, CenterBottom,
+    }
+```
+3. getMatrix的时候,matrix.preTranslate(x,y);操作, 但是不要postTranslate操作 因为post是移动整个camera的合成坐标系的;
+
+4. 最后我希望 类似AE那种可以绑定parent的形式,并且parent也可以绑定
+
+
+关于第4点,未改进的方式,记得这个上面提到的规律吧---->旋转之后 +位移操作，就是相当于 **[旋转之前+位移]之后的点** 围绕 **旋转之前的点** 旋转
+
+```
+        cameraFinal.translate(parent.parent.tx, parent.parent.ty, parent.parent.tz);
+        cameraFinal.rotate(parent.parent.rx, parent.parent.ry, parent.parent.rz);
+
+        cameraFinal.translate(parent.tx, parent.ty, parent.tz);
+        cameraFinal.rotate(parent.rx, parent.ry, parent.rz);
+
+        cameraFinal.translate(tx, ty, tz);
+        cameraFinal.rotate(rx, ry, rz);
+```
+
+关于第4点,改进成
+
+```
+   List<Layer> parentlist = new ArrayList<>();
+        parentlist.add(this);
+
+        Layer rootParent = parent;
+        while (rootParent!=null) {
+            parentlist.add(rootParent);
+            rootParent = rootParent.parent;
+        }
+
+
+        cameraFinal.save();
+        for (int i = parentlist.size() - 1; i >= 0; i--) {
+            Layer layer = parentlist.get(i);
+            cameraFinal.translate(layer.tx, layer.ty, layer.tz);
+            cameraFinal.rotate(layer.rx, layer.ry, layer.rz);
+        }
+
+        cameraFinal.getMatrix(matrix);
+        cameraFinal.restore();
+```
+
+最后封装成两个类
+>[Camera封装类CameraCorrect](https://github.com/luhaoaimama1/ZAnimate/blob/master/library/src/main/java/zone/com/zanimate/camera/CameraCorrect.java)
+>[绑定parent封装类Layer](https://github.com/luhaoaimama1/ZAnimate/blob/master/library/src/main/java/zone/com/zanimate/camera/Layer.java)
+
+[demo范例:](https://github.com/luhaoaimama1/ZAnimate)
+
+![](https://ww1.sinaimg.cn/large/006tNbRwgy1fc0y5tuckfj30fg0rs0sz.jpg)
 
 # Reference&Thanks：
 
