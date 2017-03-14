@@ -76,7 +76,7 @@ restore();到2
 
 >**所以我们要养成习惯restore,这样代码在哪都不会错**
 
-## 为什么第一次saveLayer的值是1？而不是0?
+## 为什么第一次saveLayer的值是1 ？而不是0 ?
 因为canvas.save() 返回的值 是上个图层的值。而且Canvas提供了图层（Layer）支持，缺省情况可以看作是只有一个图 层Layer。
 
 # Tips

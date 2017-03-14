@@ -11,6 +11,7 @@ categories:
 ---
 
 # 基础了解
+* Java 程序的执行过程：Java 源代码文件（.Java文件）-> Java Compiler（Java编译器）->Java 字节码文件（.class文件）->类加载器（Class Loader）->Runtime Data Area（运行时数据）-> Execution Engine（执行引擎）
 * 各种基本类型:boolean、byte、char、short、int、float、long、double;
 * 对象引用:reference类型 不等于对象本身,可能是对象的句柄也可能对象的引用指针
 * 局部变量默认没有初始值,不赋值是不可以使用的。和类变量(默认是有的)不一样;
@@ -45,7 +46,7 @@ categories:
 
 >Padding:因为对象的大小必须是8字节的整数倍。如果数据没有对齐。需要Padding来补全
 
-#垃圾收集器与内存分配策略
+## 垃圾收集器与内存分配策略
 
 * 主要思考的问题:
     * 标记-那些内存(那些死,那些活着)需要回收?
@@ -211,115 +212,7 @@ Parallel Old:老年代的多线程收集器，使用标记 - 整理算法，吞�
 <a id="way4-4"></a>
 ## 虚拟机参数设置;
 代码的运行参数设置为： -Xms20M -Xmx20M -Xmn10M -XX:+PrintGCDetails -XX:SurvivorRatio=8
-![](http://images2015.cnblogs.com/blog/616953/201602/616953-20160226111115693-1490327308.png)
-
-# 类的初始化过程
-![](http://images0.cnblogs.com/blog2015/544748/201505/251937420687138.jpg)
-
-<a id="way5-1"></a>
-## 非法向前引用
-编译器手机的顺序是由语句在源文件中出现的顺序决定的,静态语句块中只能访问到定义在静态语句之前的变量,定义它之后的变量,可以赋值,但不能访问
-
-```
-public class Test{
-    static{
-         i=0;
-         system.out.print(i);//非法向前引用
-    }
-    static int i=1;
-}
-```
-><clinit>(类构造器方法):如果类或者接口没有静态语句块,也没有对变量的赋值,那么编译器可以不为这个类生成<clinit>方法并且他被加锁了 
-
->Tips:如果在此方法中耗时很长,就可能造成多个进程阻塞;
-
-<a id="way5-2"></a>
-## 类什么时候才被初始化
-* 只有这6中情况才会导致类的类的初始化
-    * 1创建类的实例，也就是new一个对象
-    * 2访问某个类或接口的静态变量，或者对该静态变量赋值
-    * 3调用类的静态方法
-    * 4反射（Class.forName("com.lyj.load")）
-    * 5初始化一个类的子类（会首先初始化子类的父类）
-    * 6JVM启动时标明的启动类，即文件名和类名相同的那个类
-* 类的初始化步骤：
-    * 1如果这个类还没有被加载和链接，那先进行加载和链接
-    * 2假如这个类存在直接父类，并且这个类还没有被初始化（注意：在一个类加载器中，类只能初始化一次），那就初始化直接的父类（不适用于接口）
-    * 3加入类中存在初始化语句（如static变量和static块），那就依次执行这些初始化语句。
-
-<a id="way5-3"></a>         
-## 双亲委派模型
-Java虚拟器角度仅仅有两种不同的类加载器:
-
-一种启动类加载器(Bootstrap ClassLoader):C++语言实现是虚拟器自身的一部分;
-
-另一种是所有其他的类加载器(java语言,JVM之外 继承ClassLoader)
->更详细:
-
-!![](https://ww4.sinaimg.cn/large/006tKfTcgw1fb917dq0h0j30hs0cd775.jpg)
-
-Bootstrap ClassLoader:负责加载$JAVA_HOME中jre/lib/rt.jar里所有的class，由C++实现，不是ClassLoader子类
-
-Extension ClassLoader:负责加载java平台中扩展功能的一些jar包，包括$JAVA_HOME中jre/lib/*.jar或-Djava.ext.dirs指定目录下的jar包
-
-App ClassLoader:负责记载classpath中指定的jar包及目录中class
-
-Custom ClassLoader:属于应用程序根据自身需要自定义的ClassLoader，如tomcat、jboss都会根据j2ee规范自行实现ClassLoader
->加载过程中会先检查类是否被已加载，检查顺序是自底向上，从Custom ClassLoader到BootStrap ClassLoader逐层检查，只要某个classloader已加载就视为已加载此类，保证此类只所有ClassLoader加载一次。而加载的顺序是自顶向下，也就是由上层来逐层尝试加载此类。
-
-<a id="way5-3-1"></a>
-###为什么这么设计?
-
-类加载器:任何一个类都需要加载它的类加载器和这个类一同确立其在java虚拟机唯一性。每个类加载器都有类名称空间。
->两个类是否相同,是由同一个类加载器为前提下才有意义.相同是指equals、instanceof isAssignalbeFrom isIntance等;
-
-例如类java.lang.Object,他存放在rt.jar中,无论哪个类加载器加载这个类,最终都是委派给魔性最顶端的启动类加载器进行加载。因此Object类在程序的各种类加载器环境中都是**同一个类**。
-相反如果没有使用,各个类加载自行加载的话。那么系统将出现多个不同的Object类,那么java类型体系中最基本的行为也无法保证;
-
-
-以下是ClassLoader的源码,实现很简单
-```
-rotected synchronized Class<?> loadClass(String name, boolean resolve)
-	throws ClassNotFoundException
-    {
-	// First, check if the class has already been loaded
-	Class c = findLoadedClass(name);
-	if (c == null) {
-	    try {
-		if (parent != null) {
-		    //从父加载器加载
-		    c = parent.loadClass(name, false);
-		} else {
-		    //从bootstrap loader加载
-		    c = findBootstrapClassOrNull(name);
-		}
-	    } catch (ClassNotFoundException e) {
-                // ClassNotFoundException thrown if class not found
-                // from the non-null parent class loader
-            }
-            if (c == null) {
-	        // If still not found, then invoke findClass in order
-	        // to find the class.
-	        c = findClass(name);
-	    }
-	}
-	if (resolve) {
-	    resolveClass(c);
-	}
-	return c;
-    }
-```
-
-1.2以后,应当把自己的类逻辑写到findClass()(protected)方法中;
->热部署:OSGI(类加载器精髓);
-
->NB技巧:子类可以公开父类中的protected的方法;
-
-```
-public void findClass_(){
-    super.findClass();//protected
-}
-```
+![](http://images2015.cnblogs.com/blog/616953/201602/616953-20160226111115693-1490327308.png)  
 
 # 静态分派与动态分派
 
@@ -494,3 +387,5 @@ public class Sugar {
 # Reference&Thanks：
 
 http://www.cnblogs.com/leesf456/p/5218594.html
+
+http://itfeifei.win/2017/03/13/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3Java%E4%B9%8B%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%86%85%E5%AD%98/#0-sqq-1-86202-9737f6f9e09dfaf5d3fd14d775bfee85

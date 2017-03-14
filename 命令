@@ -6,5 +6,7 @@ hexo g
 
 hexo s
 
+hexo s --debug
+
 hexo d
 
