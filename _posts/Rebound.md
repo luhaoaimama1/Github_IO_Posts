@@ -9,7 +9,9 @@ tags:
     - Rebound
 
 categories:
+    - 源码分析
     - android
+    - 动画
 ---
 
 >综述：Rebound 通过胡克定律，实现的一个类似“弹簧”动画效果的第三方工具包。

@@ -8,7 +8,7 @@ tags:
     - canvas
 
 categories:
-    - android
+    - 源码分析
 ---
 以我个人主观推断的Canvas工作原理
 >如果有错误请指出谢谢~
