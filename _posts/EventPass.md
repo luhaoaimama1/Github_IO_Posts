@@ -17,7 +17,58 @@ categories:
 
 ## View总结:
 
->onTouchListener > onTouchEvent > onLongClickListener > onClickListener
+>onTouchListener -> onTouchEvent -> onLongClickListener -> onClickListener
+
+* View: 
+    * onTouchListener如果设置了 就不会走onTouchEvent了
+    * super.onTouchEvent():包含了 onLongClickListener onClickListener 的事件处理;
+    * 但是onTouchEvent()是由dispatchTouchEvent()传递过来的
+    
+
+## 处理特殊图形点击事件的几种方式 : 
+
+通过path绘制特殊的点击范围, 放入Region中 然后通过contains是否包含即可
+
+### 兼容onClick1:
+    
+```
+ @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        return isEventInPath(event)?super.dispatchTouchEvent(event);
+    }
+参考：http://blog.csdn.net/qibin0506/article/details/52676670
+```
+
+### 兼容onClick2:
+
+```
+ @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return isEventInPath(event)?super.onTouchEvent(event):false;
+    }
+```
+
+### 自己的回调监听:
+
+```
+ @Override
+    public boolean onTouchEvent(MotionEvent event) {
+    switch (event.getActionMasked()) {
+        mListener.onCenterCliched();//
+     }
+     return true;
+    }
+
+
+   	// 点击事件监听器
+    public interface MenuListener {
+        void onCenterCliched();
+        }
+参考：http://www.gcssloop.com/customview/touch-matrix-region
+```
+
+
+## 伪代码分析
 
 >上述伪代码总结为下； 基本关键点已经还原~
 
