@@ -37,30 +37,31 @@ public class Helper<T extends Helper> {
 > 用到的地方:例如一个方法的参数是Helper类型，并且无法改变参数的类型。继而用装饰器扩展其功能
 
 ```
-public class ExtraHelper extends Helper<ExtraHelper> {
+public class ExtraHelper<T extends ExtraHelper> extends Helper<T> {
 
 
-    private ExtraHelper(Helper helper) {
-        super();
-        child = this;
+    protected ExtraHelper(Helper helper) {
+        super(helper.getContext(), helper.getHolder(), helper.getAdapter());
+        child = (T) this;
     }
 
-    public static ExtraHelper wrapper(Helper helper){
+    public static ExtraHelper<ExtraHelper> wrapper(Helper helper) {
         return new ExtraHelper(helper);
     }
 
-    public ExtraHelper heihei() {
+    public T heihei() {
         System.out.println("heihei!");
         checkChild();
         return child;
     }
 
-    public ExtraHelper heihei2() {
+    public T heihei2() {
         System.out.println("heihei2!");
         checkChild();
         return child;
     }
 }
+
 ```
 
 # 最后的使用
@@ -70,4 +71,4 @@ public class ExtraHelper extends Helper<ExtraHelper> {
 ```
 
 [Demo](https://github.com/luhaoaimama1/ZAdapter3/blob/master/app/src/main/java/zone/com/zadapter3/helper/ExtraHelper.java)
-
+[Demo2](https://github.com/luhaoaimama1/JavaZone/blob/master/JavaTest_Zone/src/gson%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%8F%8D%E5%B0%84/%E7%BB%A7%E6%89%BF%E6%B3%9B%E5%9E%8B%E7%A0%94%E7%A9%B6/Main.java)
