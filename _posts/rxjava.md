@@ -1941,4 +1941,6 @@ http://gank.io/post/560e15be2dca930e00da1083
 
 https://github.com/amitshekhariitbhu/RxJava2-Android-Samples
 
+http://www.jianshu.com/u/c50b715ccaeb
+
 
