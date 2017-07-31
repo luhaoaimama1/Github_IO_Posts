@@ -1,5 +1,5 @@
 ---
-title: Rxjava总结 ##文章标题
+title: Rxjava2总结 ##文章标题
 date:  2017-7-31 12:40:37
 ## updated: 2017-7-31 13:19:37
 comments: true ##开启评论 false关闭
