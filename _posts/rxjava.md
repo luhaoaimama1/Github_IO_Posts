@@ -1928,6 +1928,11 @@ public class RxEmitter<T> implements ObservableOnSubscribe<T>, ObservableEmitter
 
 ## Reference&Thanks：
 
+
+https://www.gitbook.com/book/mcxiaoke/rxdocs/details
+
+> 基本上所有的都参考此文档 很神！
+
 http://blog.csdn.net/maplejaw_/article/details/52396175
 
 http://developer.51cto.com/art/201703/535298.htm
