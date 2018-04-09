@@ -161,7 +161,7 @@ public interface LongToIntFunction {
 ## Stream终结符 
 [官方演示范例](http://www.concretepage.com/java/jdk-8/)
 
-[演示范例](https://github.com/luhaoaimama1/Java8Study/blob/master/app/src/main/java/zone/com/java8study/test/EndSymbolTest.java)
+[演示范例](https://github.com/luhaoaimama1/Java8Study/blob/master/app/src/main/java/zone/com/java8study/java8/test/EndSymbolTest.java)
 
 | 方法名 | 类型  | return | 函数接口  | 功能  |
 | :------------: |:---------------:| :---------------:| :---------------:| :---------------:|
@@ -183,7 +183,7 @@ public interface LongToIntFunction {
 | toArray  | 起始符 | Object/A[] | None/IntFunction&lt;A[]&gt;| 流转换成数组 |
 
 ## Stream中间符 
-[演示范例](https://github.com/luhaoaimama1/Java8Study/blob/master/app/src/main/java/zone/com/java8study/test/CenterSymbolTest.java)
+[演示范例](https://github.com/luhaoaimama1/Java8Study/blob/master/app/src/main/java/zone/com/java8study/java8/test/CenterSymbolTest.java)
 
 | 方法名 | 类型  | return  | 函数接口  | 功能  | 
 | :------------: |:---------------:| :---------------:| :---------------:| :---------------:|   
@@ -206,7 +206,7 @@ public interface LongToIntFunction {
 
 ## Stream静态起始符
 
-[演示范例](https://github.com/luhaoaimama1/Java8Study/blob/master/app/src/main/java/zone/com/java8study/test/StartSymbolTest.java)
+[演示范例](https://github.com/luhaoaimama1/Java8Study/blob/master/app/src/main/java/zone/com/java8study/java8/test/StartSymbolTest.java)
 
 | 方法名 | 类型  | return  | 函数接口  | 功能  | 
 | :------------: |:---------------:| :---------------:| :---------------:| :---------------:|  
@@ -223,7 +223,7 @@ public interface LongToIntFunction {
 
 > DoubleStream,LongStream与之相同；
 
-[演示范例](https://github.com/luhaoaimama1/Java8Study/blob/master/app/src/main/java/zone/com/java8study/test/dil/IntExtraTest.java)
+[演示范例](https://github.com/luhaoaimama1/Java8Study/blob/master/app/src/main/java/zone/com/java8study/java8/test/dil/IntExtraTest.java)
 
 | 方法名 | 类型  | return  | 函数接口  | 功能  |
 | :------------: |:---------------:| :---------------:| :---------------:| :---------------:|  
@@ -279,7 +279,7 @@ Collectors
     * A 中间类型
     * R Stream.collect返回的类型
     
-[演示范例](https://github.com/luhaoaimama1/Java8Study/blob/master/app/src/main/java/zone/com/java8study/collectors/SymbolTest.java)
+[演示范例](https://github.com/luhaoaimama1/Java8Study/blob/master/app/src/main/java/zone/com/java8study/java8/collectors/SymbolTest.java)
 
 | 方法名 | return  | 函数接口  | 功能  | 
 | :------------: | :---------------:| :---------------:| :---------------:|
@@ -310,7 +310,7 @@ Collectors
 
 ## 自定义收集器
 
-[演示范例](https://github.com/luhaoaimama1/Java8Study/blob/master/app/src/main/java/zone/com/java8study/collectors/StringCollector.java)
+[演示范例](https://github.com/luhaoaimama1/Java8Study/blob/master/app/src/main/java/zone/com/java8study/java8/collectors/StringCollector.java)
 
 
 # Reference&Thanks：
