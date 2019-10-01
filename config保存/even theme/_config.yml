@@ -1,0 +1,113 @@
+# ===========================================
+# Site Information Settings
+# ===========================================
+
+# Site creation time
+since: 2016
+
+# Custom your favicon.ico in `site/source`
+favicon: /favicon.ico
+
+# Set feed link (false | default | your feed link)
+# false: disable
+# default: use `atom.xml`, generator for `hexo-generator-feed`
+#rss: default
+rss: https://luhaoaimama1.github.io/archives/
+
+# ===========================================
+# Menu Settings
+# ===========================================
+menu:
+  Home: /
+  Archives: /archives/
+  Tags: /tags/
+  Categories: /categories/
+  About: /about/
+  项目简介: /introduce/
+  外联: /friendlinks/
+  留言: /message/
+
+# ===========================================
+# Theme Settings
+# ===========================================
+# color: default | mint green | cobalt blue | hot pink | dark violet
+color: default
+
+# default page mode: default | archives
+mode: default
+
+toc: true
+
+# jQuery fancybox
+fancybox: true
+
+pjax: true
+
+# LaTeX support (via MathJax)
+latex: false
+
+copyright:
+  enable: true
+  # https://creativecommons.org/
+  license: '<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>'
+
+reward:
+  enable: true
+  qrCode:
+    wechat: /weixin.png
+    alipay:
+
+# ===========================================
+# Social links Settings
+# ===========================================
+social:
+  email: 1149324777@email.com
+  stack-overflow:
+  twitter:
+  facebook:
+  linkedin:
+  google:
+  github: https://github.com/luhaoaimama1
+  weibo: https://weibo.com/u/2193119237
+  zhihu:
+  douban:
+  pocket:
+  tumblr:
+  instagram:
+
+# ===========================================
+# Third Party Services Settings
+# ===========================================
+
+# LeanCloud
+leancloud:
+  app_id: EqaOMqaV8CvWdJSyKIq0TjYj-gzGzoHsz
+  app_key: CvF3DEp2zg5pnhoPp64G3RGw
+
+# Baidu Analytics
+baidu_analytics: 6d26901ed1
+# Baidu Verification
+baidu_verification:
+
+# Google Analytics
+google_analytics:
+# Google Verification
+google_verification:
+
+# Disqus
+#disqus_shortname: https-luhaoaimama1-github-io
+
+#Changyan
+changyan:
+  appid:
+  appkey:
+
+#LiveRe
+livere_datauid: MTAyMC80Njg5My8yMzM5NA==
+
+per_page: 10
+
+# ===========================================
+# Version
+# ===========================================
+version: 2.11.0
