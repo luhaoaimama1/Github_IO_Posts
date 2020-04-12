@@ -21,16 +21,16 @@ categories:
 
 # 内存管理机制
 
-![](https://ww1.sinaimg.cn/large/006tKfTcgw1fb913k1wc0j30f50a53zv.jpg)
+![](http://ww1.sinaimg.cn/large/006tKfTcgw1fb913k1wc0j30f50a53zv.jpg)
 >本地方法栈和虚拟机栈有的虚拟机是不分的;
 
 <a id="way1-1"></a>
 ## jvm各个区域的概要
-![](https://ww4.sinaimg.cn/large/006tKfTcgw1fb91bux68qj31f016w41s.jpg)
+![](http://ww4.sinaimg.cn/large/006tKfTcgw1fb91bux68qj31f016w41s.jpg)
 
 <a id="way1-2"></a>
 ## 对象访问定位
-![](https://ww3.sinaimg.cn/large/006tKfTcgw1fb913u4clkj317k0h6abh.jpg)
+![](http://ww3.sinaimg.cn/large/006tKfTcgw1fb913u4clkj317k0h6abh.jpg)
 >句柄优势:reference本身不需要修改,只会改变句柄中的实例数据指针
 
 >直接指针访问优势:最大好处速度快。节省了一次指针定位的开销;
@@ -78,7 +78,7 @@ public class ReferenceCountingGC {
 ```
 
 2)可达性分析算法:
-![](https://ww4.sinaimg.cn/large/006tKfTcgw1fb9143ha08j30cx08zmx7.jpg)
+![](http://ww4.sinaimg.cn/large/006tKfTcgw1fb9143ha08j30cx08zmx7.jpg)
 * Java 语言中,可作为GC Roots的对象包括下面几种;
     * 虚拟机栈中(栈帧中的本地变量表)的引用对象
     * 方法区中类静态属性引用对象
@@ -113,7 +113,7 @@ public class ReferenceCountingGC {
 >不足1:效率问题,标记和清除效率都不高;
 >不足2:空间问题,产生大量的不连续的内存碎片
 
-![](https://ww2.sinaimg.cn/large/006tKfTcgw1fb914owdnxj30ii0c2t9t.jpg)
+![](http://ww2.sinaimg.cn/large/006tKfTcgw1fb914owdnxj30ii0c2t9t.jpg)
 <a id="way3-2"></a>
 ## 复制(Copying)算法
 内存容量划分两个大小相等的两块,每次使用其中的一块。这块用完了复制存活的对象到另一块,在把这块清理掉
@@ -122,11 +122,11 @@ public class ReferenceCountingGC {
 现代的商用虚拟街都采用这种算法来回收新生代;因为新生代都是 **朝生暮死** 所以不需要1:1来划分
 而将内存分为一块较大的Eden 和两个较小的Survivor 默认大小比;8:1, 每次新生代中可用的内存空间是整个新生代容量的90=(Eden+Survivor), 
 "浪费" 10 因为没办法保证回收只有不多于10的存活,Survivor空间不够需要老年代进行 担保;
-![](https://ww1.sinaimg.cn/large/006tKfTcgw1fb915j8lkhj30ik0bi0tt.jpg)
+![](http://ww1.sinaimg.cn/large/006tKfTcgw1fb915j8lkhj30ik0bi0tt.jpg)
 <a id="way3-3"></a>
 ## 标记-整理(Mark-Compact)算法(老年代常用)
 标记和以前一样,后续步骤不是直接回收,而是存活对象向一端移动,然后清理边界以外的内存;
-![](https://ww3.sinaimg.cn/large/006tKfTcgw1fb915o8c50j30in0bcab3.jpg)
+![](http://ww3.sinaimg.cn/large/006tKfTcgw1fb915o8c50j30in0bcab3.jpg)
 <a id="way3-4"></a>
 ## 分代收集算法
 根据对象存活周期将内存划分不同的几块。一般堆分为 新生代 和老年代。这样根据年代的特点采用最适当的收集算法
@@ -151,8 +151,8 @@ public class ReferenceCountingGC {
 # 垃圾收集器
 <a id="way4-1"></a>
 ## 7种垃圾收集器的介绍
-![](https://ww2.sinaimg.cn/large/006tKfTcgw1fb9166bymyj30e00b5wfn.jpg)
-![](https://ww1.sinaimg.cn/large/006tKfTcgw1fb9160tldaj31kw0jgacz.jpg)
+![](http://ww2.sinaimg.cn/large/006tKfTcgw1fb9166bymyj30e00b5wfn.jpg)
+![](http://ww1.sinaimg.cn/large/006tKfTcgw1fb9160tldaj31kw0jgacz.jpg)
 >G1收集器因为没有商用的就不写了;
 
 Serial:单线程收集器，在进行垃圾收集时，必须要暂停其他所有的工作线程，直到它收集结束。
@@ -192,7 +192,7 @@ Parallel Old:老年代的多线程收集器，使用标记 - 整理算法，吞�
 4. 0.0011969 secs，表示GC所占用的时间，单位为秒。
 5. [Times: user=0.00 sys=0.00, real=0.00 secs]，表示GC的更具体的时间，user代表用户态消耗的CPU时间，sys代表内核态消耗的CPU时间，real代表操作从开始到结束所经过的墙钟时间。CPU时间与墙钟时间的区别是，墙钟时间包括各种非运算的等待耗时，如等待磁盘IO，等待线程阻塞，CPU时间则不包含这些耗时。当系统有多CPU或者多核时，多线程操作会叠加这些CPU时间，所以读者看到user或者sys时间超过real时间也是很正常的
 
-![](https://ww1.sinaimg.cn/large/006tKfTcgw1fb916pqo7bj30lm09taas.jpg)
+![](http://ww1.sinaimg.cn/large/006tKfTcgw1fb916pqo7bj30lm09taas.jpg)
 * GC类型
     * Minor GC:指发生在新生代的垃圾收集动作，非常频繁，速度较快。
     * Major GC:指发生在老年代的GC，出现Major GC，经常会伴随一次Minor GC，同时Minor GC也会引起Major GC，一般在GC日志中统称为GC，不频繁。
@@ -207,7 +207,7 @@ Parallel Old:老年代的多线程收集器，使用标记 - 整理算法，吞�
 
 <a id="way4-3"></a>
 ## 空间分配担保
-![](https://ww4.sinaimg.cn/large/006tKfTcgw1fb9170p4unj30b5087gm9.jpg)
+![](http://ww4.sinaimg.cn/large/006tKfTcgw1fb9170p4unj30b5087gm9.jpg)
 
 <a id="way4-4"></a>
 ## 虚拟机参数设置;

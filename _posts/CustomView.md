@@ -12,33 +12,33 @@ categories:
 ---
 
 # View树图
-![](https://ww1.sinaimg.cn/large/006tKfTcly1fo6oxez6q4j30t40keq35.jpg)
+![](http://ww1.sinaimg.cn/large/006tKfTcly1fo6oxez6q4j30t40keq35.jpg)
 
 <!-- more -->
 
 # 简易流程总结
-![](https://ww1.sinaimg.cn/large/006tKfTcly1fo6ozil4d5j30u40ms0th.jpg)
+![](http://ww1.sinaimg.cn/large/006tKfTcly1fo6ozil4d5j30u40ms0th.jpg)
 # View的三大流程
-![](https://ww4.sinaimg.cn/large/006tKfTcly1fo6p2fnfzbj31kw0khjtk.jpg)
+![](http://ww4.sinaimg.cn/large/006tKfTcly1fo6p2fnfzbj31kw0khjtk.jpg)
 ## request与ViewRootImpl的关系
-![](https://ww3.sinaimg.cn/large/006tKfTcly1fo6p11ggfxj30qw0rmq3n.jpg)
+![](http://ww3.sinaimg.cn/large/006tKfTcly1fo6p11ggfxj30qw0rmq3n.jpg)
 ## invalidate与ViewRootImpl的关系
-![](https://ww3.sinaimg.cn/large/006tKfTcly1fo6p1vadyjj31720ycq5b.jpg)
+![](http://ww3.sinaimg.cn/large/006tKfTcly1fo6p1vadyjj31720ycq5b.jpg)
 
 # 测量与布局的详细了解
 
 ## MeasureSpec的了解
-![](https://ww2.sinaimg.cn/large/006tKfTcly1fo6p38tlodj30t809yaa8.jpg)
+![](http://ww2.sinaimg.cn/large/006tKfTcly1fo6p38tlodj30t809yaa8.jpg)
 ## ViewGroup的测量
-![](https://ww2.sinaimg.cn/large/006tKfTcly1fo6p448q78j31dy0osgns.jpg)
+![](http://ww2.sinaimg.cn/large/006tKfTcly1fo6p448q78j31dy0osgns.jpg)
 ## onLayout的了解
-![](https://ww3.sinaimg.cn/large/006tKfTcly1fo6p4y9wv6j31800aqaas.jpg)
+![](http://ww3.sinaimg.cn/large/006tKfTcly1fo6p4y9wv6j31800aqaas.jpg)
 ## 测量相关方法
-![](https://ww2.sinaimg.cn/large/006tKfTcly1fo6p6ln1i8j314g0j8gnw.jpg)
-![](https://ww3.sinaimg.cn/large/006tKfTcly1fo6p682yp8j31060k8wgz.jpg)
-![](https://ww2.sinaimg.cn/large/006tKfTcly1fo6p7bs37yj31fi0h6dh3.jpg)
+![](http://ww2.sinaimg.cn/large/006tKfTcly1fo6p6ln1i8j314g0j8gnw.jpg)
+![](http://ww3.sinaimg.cn/large/006tKfTcly1fo6p682yp8j31060k8wgz.jpg)
+![](http://ww2.sinaimg.cn/large/006tKfTcly1fo6p7bs37yj31fi0h6dh3.jpg)
 ##Padding与Margin的概念 通过FrameLayout研究padding matchParent和weight的实现
-![](https://ww4.sinaimg.cn/large/006tKfTcly1fo6p7uvww5j31hi10an2v.jpg)
+![](http://ww4.sinaimg.cn/large/006tKfTcly1fo6p7uvww5j31hi10an2v.jpg)
 
 最后附上上面所有的流程图
 https://www.processon.com/view/link/5a742abce4b0615ac048b7f5

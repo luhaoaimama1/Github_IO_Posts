@@ -71,7 +71,7 @@ public interface SpringListener {
 
 >Ps:setAtRest()会让他停止动画；
 
-<img src="https://ww2.sinaimg.cn/large/006tKfTcgw1fb91ocxcvsj30l40guq4f.jpg" width="500" >
+<img src="http://ww2.sinaimg.cn/large/006tKfTcgw1fb91ocxcvsj30l40guq4f.jpg" width="500" >
 
 # 连锁动画
 
@@ -153,7 +153,7 @@ public void onAfterIntegrate(BaseSpringSystem springSystem) {
 ```
 
 # 简单的源码流程分析图
-![](https://ww1.sinaimg.cn/large/006tKfTcgw1fb91oqry1sj31jq0wa78w.jpg)
+![](http://ww1.sinaimg.cn/large/006tKfTcgw1fb91oqry1sj31jq0wa78w.jpg)
 
 # Reference&Thanks：
 

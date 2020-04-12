@@ -79,7 +79,7 @@ Java虚拟器角度仅仅有两种不同的类加载器:
 另一种是所有其他的类加载器(java语言,JVM之外 继承ClassLoader)
 >更详细:
 
-!![](https://ww4.sinaimg.cn/large/006tKfTcgw1fb917dq0h0j30hs0cd775.jpg)
+!![](http://ww4.sinaimg.cn/large/006tKfTcgw1fb917dq0h0j30hs0cd775.jpg)
 
 Bootstrap ClassLoader:负责加载$JAVA_HOME中jre/lib/rt.jar里所有的class既核心API(ExtClassLoader和AppClassLoader也在此时被加载)，由C++实现，不是ClassLoader子类
 

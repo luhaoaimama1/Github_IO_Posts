@@ -29,6 +29,12 @@ categories:
 | stopNestedScroll   | onStopNestedScroll | 
 >fling和 Scroll 类似 就不说了
 
+##总结就是：
+
+子view 消失事件前，把数据传递到父布局中问你是否消耗？
+子view:dispatchNestedPreScroll-> 父view:onNestedPreScroll
+父view处理完后 剩下的事件传递回了 子view:dispatchNestedScroll  子view在其中消耗了事件后。把剩下的事件传递给 父view:onNestedScroll.
+
 # Parent
 [`parent流程接入`](http://fromwiz.com/share/s/3Hsjaq1-lQ9Q2SChN02Hkyvk2vEyiC22IktY2lqqNl1d1jF9)   [`parent代码实例`](https://github.com/luhaoaimama1/zone-sdk/blob/master/Android_Zone_Test/src/com/example/mylib_test/activity/touch/NestedScrollingActivity_hongParent.java)
 
@@ -60,17 +66,17 @@ onNestedFling：同onNestedScroll不咋常用
 
 startNestedScroll,stopNestedScroll；
 
-![](https://ww3.sinaimg.cn/large/006tKfTcgw1fb8yykhy0yj30m808i76m.jpg)
+![](http://ww3.sinaimg.cn/large/006tKfTcgw1fb8yykhy0yj30m808i76m.jpg)
 
 dispatchNestedPreScroll使用时机  此例为RecyclerView的内容；
 (因为是子view消耗钱 父消耗 )  所以 用if判断 父亲是否消耗；
 
-![](https://ww2.sinaimg.cn/large/006tKfTcgw1fb8yyf39tvj30jg04y402.jpg)
+![](http://ww2.sinaimg.cn/large/006tKfTcgw1fb8yyf39tvj30jg04y402.jpg)
 
 dispatchNestedScroll  则和上边不同；是child先消耗了；在吧剩下的给NestedParent；看他消耗不；
 >参考RecyclerView
 
-![](https://ww4.sinaimg.cn/large/006tKfTcgw1fb8yy026faj30m80hgjxf.jpg)
+![](http://ww4.sinaimg.cn/large/006tKfTcgw1fb8yy026faj30m80hgjxf.jpg)
 
 ## 注意：
 1.抖动问题：offsetInWindow 如果不加这个参数会出现抖动，

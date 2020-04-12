@@ -15,17 +15,25 @@ categories:
 
 <!-- more -->
 # 官方合成图
+> 如正确姿势的图，首先要明白的
 
-![](https://ww2.sinaimg.cn/large/006tKfTcgw1fb8yigv0rqj30m80f8my1.jpg)
->如正确姿势的图，首先要明白的
+![](http://ww2.sinaimg.cn/large/006tKfTcgw1fb8yigv0rqj30m80f8my1.jpg)
+
+![](https://tva1.sinaimg.cn/large/006y8mN6gy1g7lz5u1zw6j313e0m8n1g.jpg)
+ 查看PorterDuff类 。 官方先draw 黄色的 然后draw 蓝色的 ，
+ 
+* dst:Destination image
+* src:Source image 
+
+> 我的理解是 对于Xfermode  src 是对当前层的图案，而dst是 作用目标层
 
 | 名字 | 解释2  | 名字 | 解释2  |
 | :------------: |:---------------:| :---------------:| :---------------:|
-| 黄色 | 先画,下层(dst) | in | 交集 |
-| 蓝色 | 后画,上层(src) | out | 不相交的 |
->举例：PorterDuff.Mode.SRC_IN参数，表示的显示的是 SRC层 IN交集的部分(注意 `这其实是DST层` 下面有解释)；
+| 黄色 | 先画 | in | 交集 |
+| 蓝色 | 后画 | out | 不相交的 |
+>举例：PorterDuff.Mode.SRC_IN参数 显示 是交集部分 图像为SRC部分
 
-![](https://ww4.sinaimg.cn/large/006tKfTcgw1fb8yipzxu1j30rs0c13yr.jpg)
+![](http://ww4.sinaimg.cn/large/006tKfTcgw1fb8yipzxu1j30rs0c13yr.jpg)
 
 
 | 名字 | 解释2  |
@@ -33,13 +41,14 @@ categories:
 | 图2 |  `创建两个Bitmap` `手机宽高` `bitmap上绘制圆` `如果看不懂看下面的代码`|
 | 图1 | `绘两个圆` `如果看不懂看下面的代码` |
 
+
 # 核心原理(边界)：
 >Xfermode效果:作用在 `两个边界之内`；`边界之外` `没有Xfermode效果`；
 
 | 图 |边界 | SRC_IN  | SRC_OUT  |
 | :--: | :-------: |:---------------:|:---------------:|
 | `图2` `正确姿势` | 每个都是手机的宽高  |  正确姿势图中的SRC_IN   | 如正确姿势图中的 SRC_OUT   |
-| `图1` `平时的误解` | 每个都是绘的圆那么大 | 如 `正确姿势图中的SRC_IN` `多出黄色的部分` | 如 `正确姿势图中的SRC_OUT` `多出黄色的部分` |
+| `图1` `平时的误解` | 每个都是绘的圆那么大 | 如 `正确姿势图中的SRC_IN` `但多出黄色的部分` | 如 `正确姿势图中的SRC_OUT` `但多出黄色的部分` |
 >正确姿势图 是官方给的图；
 
 >Tips:为什么多出黄色的部分？ 因为这个部分是 边界未相交的部分,那么不会有Xfermode的效果 所以剩下；
@@ -80,6 +89,10 @@ categories:
     canvas2.drawCircle(getWidth() / 2 + 200, getHeight() / 2 + 200, 200, paint);
 ```
 
+
+> Tips:如果用到  canvas.saveLayer（，paint，） 图层的方式进行xfermode 最好给图层一个单独的paint。不要和 图层内部draw的paint的xfermode混淆. 这里被坑过
+> Tips2: 叠加模式的paint和绘制的paint不要用一个, 因为会混乱.因为很重要所以还要重复~
+
 # 问题延伸
 
 ## 为什么 不用saveLayerAlpha有时候就不好使
@@ -91,12 +104,12 @@ canvas.drawBitmap(dstBmp, 0, 0, mPaint);
 mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
 canvas.drawBitmap(srcBmp, width / 2, height / 2, mPaint);
 ```
-![](https://ww4.sinaimg.cn/large/006tKfTcgw1fb8ygjcf7ij30uy092mx6.jpg)
+![](http://ww4.sinaimg.cn/large/006tKfTcgw1fb8ygjcf7ij30uy092mx6.jpg)
 ## **有saveLayer的绘图流程**
 这是因为在调用saveLayer时，会生成了一个全新的bitmap，这个bitmap的大小就是我们指定的保存区域的大小，新生成的bitmap是全透明的，在调用saveLayer后所有的绘图操作都是在这个bitmap上进行的。
-![](https://ww3.sinaimg.cn/large/006tKfTcgw1fb8yiwcm8bj30f008umx5.jpg)
+![](http://ww3.sinaimg.cn/large/006tKfTcgw1fb8yiwcm8bj30f008umx5.jpg)
 ## **没有saveLayer的绘图流程**
 由于我们先把整个画布给染成了绿色，然后再画上了一个圆形，所以在应用xfermode来画源图像的时候，目标图像当前Bitmap上的所有图像了，也就是整个绿色的屏幕和一个圆形了。所以这时候源图像的相交区域是没有透明像素的，透明度全是100%，这也就不难解释结果是这样的原因了。
-![](https://ww4.sinaimg.cn/large/006tKfTcgw1fb8yj3233oj30fu09ga9z.jpg)
+![](http://ww4.sinaimg.cn/large/006tKfTcgw1fb8yj3233oj30fu09ga9z.jpg)
 >总结就是  saveLayer为了区分，哪一步的图形,应该与合成模式的bitmap去合成 运算；
 

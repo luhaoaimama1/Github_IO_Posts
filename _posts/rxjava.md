@@ -65,7 +65,7 @@ Observable.create(new ObservableOnSubscribe<Integer>() {
 
 > timer() alt+点击timer可查看 关于timer的方法 可以看到时候有这个参数的变体!
 
-![](https://ww1.sinaimg.cn/large/006tNc79gy1fhyjg4qv2fj30v204ot9a.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gy1fhyjg4qv2fj30v204ot9a.jpg)
 
 * Callable<U> bufferSupplier:自定义装载的容器
 
@@ -1062,7 +1062,7 @@ old
 
 * join:任何时候，只要在另一个Observable发射的数据定义的时间窗口内，这个Observable发射了。一条数据，就结合两个Observable发射的数据
 
-![](https://ww3.sinaimg.cn/large/006tKfTcgy1fhzely2zzjj31am0r2go8.jpg)
+![](http://ww3.sinaimg.cn/large/006tKfTcgy1fhzely2zzjj31am0r2go8.jpg)
 
 ```
      <!-- 此demo 好使但是未让能理解透彻  仅仅想测试能结果的任用  想明白的话 此demo无效 -->
@@ -1753,7 +1753,7 @@ apiClient.updateMyData(myUpdatedData)
 
 * lift 原理图
 
-![](https://ww4.sinaimg.cn/large/006tKfTcgy1fi33z4i9jlj30mi0gp74i.jpg)
+![](http://ww4.sinaimg.cn/large/006tKfTcgy1fi33z4i9jlj30mi0gp74i.jpg)
 
 ```
 @Test

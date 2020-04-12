@@ -15,7 +15,7 @@ categories:
 
 <!-- more -->
 # 图片理解模型
-![](https://ww4.sinaimg.cn/large/006tKfTcgw1fb8y9kyyggj31ig11oq91.jpg)
+![](http://ww4.sinaimg.cn/large/006tKfTcgw1fb8y9kyyggj31ig11oq91.jpg)
 
 # 我的启蒙关键就是saveLayer的官方文档：
 ```

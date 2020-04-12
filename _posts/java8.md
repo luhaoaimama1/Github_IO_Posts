@@ -22,7 +22,7 @@ categories:
 <!-- more -->
 
 ## 快捷键提示
-![](https://ww4.sinaimg.cn/large/006tNbRwgy1ffbnfxt95bj30zk0j4wgl.jpg)
+![](http://ww4.sinaimg.cn/large/006tNbRwgy1ffbnfxt95bj30zk0j4wgl.jpg)
 
 ## lambda简单使用 
 

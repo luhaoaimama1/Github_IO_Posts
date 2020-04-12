@@ -20,8 +20,8 @@ categories:
 
 | View | Camera(锚点:左上角点)  | Camera Lib|
 | :------------: |:---------------:| :-----:|
-| ![](https://ww4.sinaimg.cn/large/006tNbRwly1fc0em565jkg307i07i7wm.gif) | ![](https://ww2.sinaimg.cn/large/006tNbRwly1fc0f25baf7g307i07i1l1.gif) | ![](https://ww1.sinaimg.cn/large/006tNbRwly1fc0f2btfm7g307i07i7wl.gif) |
-| ![](https://ww4.sinaimg.cn/large/006tNbRwly1fc0f6bb02pj30at08cwel.jpg)   | ![](https://ww3.sinaimg.cn/large/006tNbRwly1fc0fai83kyj30at08cglh.jpg) | 同view |
+| ![](http://ww4.sinaimg.cn/large/006tNbRwly1fc0em565jkg307i07i7wm.gif) | ![](http://ww2.sinaimg.cn/large/006tNbRwly1fc0f25baf7g307i07i1l1.gif) | ![](http://ww1.sinaimg.cn/large/006tNbRwly1fc0f2btfm7g307i07i7wl.gif) |
+| ![](http://ww4.sinaimg.cn/large/006tNbRwly1fc0f6bb02pj30at08cwel.jpg)   | ![](http://ww3.sinaimg.cn/large/006tNbRwly1fc0fai83kyj30at08cglh.jpg) | 同view |
 | 左手坐标系 [判断依据](http://fromwiz.com/share/s/3Hsjaq1-lQ9Q2SChN02Hkyvk1nSH681Fc4lk2iftz320K7Za)  | *camera视角的图片锚点坐标系* | 同view |
 
 > *camera视角的图片锚点坐标系*：其实用的也是左手坐标系,但是为什么会围绕X旋转180呢？ 
@@ -105,7 +105,7 @@ temp.postTranslate操作 移动的是 camera的合成坐标系
 
 >[此demo在此项目中](https://github.com/luhaoaimama1/ZAnimate)
 
-![](https://ww1.sinaimg.cn/large/006tNbRwly1fc0l088rrtg307i0dcdwu.gif)
+![](http://ww1.sinaimg.cn/large/006tNbRwly1fc0l088rrtg307i0dcdwu.gif)
 
 左图关键代码：
 
@@ -206,7 +206,7 @@ temp.postTranslate操作 移动的是 camera的合成坐标系
 
 [demo范例:](https://github.com/luhaoaimama1/ZAnimate)
 
-![](https://ww1.sinaimg.cn/large/006tNbRwgy1fc0y5tuckfj30fg0rs0sz.jpg)
+![](http://ww1.sinaimg.cn/large/006tNbRwgy1fc0y5tuckfj30fg0rs0sz.jpg)
 
 # Reference&Thanks：
 

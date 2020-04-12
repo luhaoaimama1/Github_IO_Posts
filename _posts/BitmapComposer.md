@@ -13,7 +13,7 @@ categories:
 
 灵感来源于AE,参考AE合成图的步骤;
 
-![](https://ww4.sinaimg.cn/large/006tNbRwly1fbvy8lrq8fj31h80ayt9l.jpg)
+![](http://ww4.sinaimg.cn/large/006tNbRwly1fbvy8lrq8fj31h80ayt9l.jpg)
 
 <!-- more -->
 
@@ -38,7 +38,7 @@ BitmapComposer.newComposition(bt.getWidth(), bt.getHeight(), Bitmap.Config.ARGB_
 
 **实例demo**:[zone-sdk项目](https://github.com/luhaoaimama1/zone-sdk)运行后:->动画、surfaceView、绘图方面的研究->波浪 进入即可看到;
 
-![](https://ww1.sinaimg.cn/large/006tNbRwly1fbvyespt80g307i0dcax1.gif)
+![](http://ww1.sinaimg.cn/large/006tNbRwly1fbvyespt80g307i0dcax1.gif)
 
 > demo原理:第一层是 **黑白图片**,第二层是加过 **波浪Mask(遮罩的-既android的PorterDuff)**的**原图**
 

@@ -14,7 +14,7 @@ categories:
 
 # 图解
 
-![](https://ww2.sinaimg.cn/large/006tNc79gy1fdoguk5a9ij31fw1arn20.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gy1fdoguk5a9ij31fw1arn20.jpg)
 
 <!-- more -->
 

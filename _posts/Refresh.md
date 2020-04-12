@@ -57,7 +57,7 @@ https://github.com/luhaoaimama1/ZRefreshLayout
 
 >欢迎Star 自恋的宣传一下 (*>∀<)ﾉ))★
 
-![](https://ww2.sinaimg.cn/large/006tNbRwly1fbthspgg0qj31kw0xrdjz.jpg)
+![](http://ww2.sinaimg.cn/large/006tNbRwly1fbthspgg0qj31kw0xrdjz.jpg)
 
 # 特点与功能实现
 

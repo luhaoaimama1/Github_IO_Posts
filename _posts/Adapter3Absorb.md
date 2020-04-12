@@ -20,7 +20,7 @@ categories:
 
 # 效果图
 
-![](https://ww1.sinaimg.cn/large/006tNc79ly1fifdm9jzucg307i0dcal7.gif)
+![](http://ww1.sinaimg.cn/large/006tNc79ly1fifdm9jzucg307i0dcal7.gif)
 
 
 <!-- more -->

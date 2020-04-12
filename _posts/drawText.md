@@ -72,7 +72,7 @@ bounds：Rect(4, -75 - 347, 21)
 <a id="way5"></a>
 # setTextAlign
 
-<img src="https://ww4.sinaimg.cn/large/006tKfTcgw1fb921d86qhj30jk0eq3ze.jpg" width="400" >
+<img src="http://ww4.sinaimg.cn/large/006tKfTcgw1fb921d86qhj30jk0eq3ze.jpg" width="400" >
 
 * Left(默认模式):baseLineX在 绘制矩形bounds的左边
 * Center:baseLineX在 绘制矩形bounds的中间
@@ -118,7 +118,7 @@ switch (paint.getTextAlign()) {
 # 对应 align 与show方法的 范例
 **实例demo**:[zone-sdk项目](https://github.com/luhaoaimama1/zone-sdk)运行后:->动画、surfaceView、绘图方面的研究->drawtext工具测试 进入即可看到;
 
-![](https://ww3.sinaimg.cn/large/006tNbRwly1fbw1kiaxghj30ka0gqjrw.jpg)
+![](http://ww3.sinaimg.cn/large/006tNbRwly1fbw1kiaxghj30ka0gqjrw.jpg)
 
 # Reference&Thanks：
 

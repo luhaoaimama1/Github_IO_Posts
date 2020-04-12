@@ -192,7 +192,7 @@ $ hexo new page about
 
 这个about是主题文件夹下的_config.yml
 
-<img src="https://ww4.sinaimg.cn/large/006tNbRwgw1fb6xpz8l44j30ko0fijt6.jpg" width="400" >
+<img src="http://ww4.sinaimg.cn/large/006tNbRwgw1fb6xpz8l44j30ko0fijt6.jpg" width="400" >
 
 最终生成在source目录下 一个**about**文件夹和一个**index.md**文件；
 

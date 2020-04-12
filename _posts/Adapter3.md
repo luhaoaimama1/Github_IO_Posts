@@ -19,7 +19,7 @@ categories:
 > helper比ButterKnife好,原因:可定制封装逻辑，不强转，可连写,可通过泛型+继承+装饰模式达到扩展的目的；
 * adapter 可扩展+链式调用  是用 泛型+继承 还是 同一个接口呢？
 > 泛型+继承 :在IDEA中是可以的。但是AS中出现了bug。我已经向google提意见了,估计不会吊我~
-> ![](https://ww2.sinaimg.cn/large/006tNc79gy1ff2v3z7mq0j31a20cewg6.jpg)
+> ![](http://ww2.sinaimg.cn/large/006tNc79gy1ff2v3z7mq0j31a20cewg6.jpg)
 > 所以退而求其次 选择同一个接口
 
 * 基础功能 
@@ -196,7 +196,7 @@ headerFooterView功能
 * 给我以灵感:网络请求 是 通过请求 异步+eventbus？
 这样多个注册了Subscribe的页面同时存活，其中一个请求。另一个页面也会处理相同的数据，会不会凌乱呢？
 > 不过这个确实很美观。我很喜欢 可以有一点缺憾,如果eventBus多支持一个方法,只在本类分发接受就好了~
-> ![](https://ww4.sinaimg.cn/large/006tNc79gy1ff2vqpvwczj30eo07uwel.jpg)
+> ![](http://ww4.sinaimg.cn/large/006tNc79gy1ff2vqpvwczj30eo07uwel.jpg)
 
 * 工具类
 DataCache，FileUtil，DataCleanManager，UrlUtil，ACache，CacheUtil，UUIDGenerator
@@ -206,7 +206,7 @@ SpeedyLinearLayoutManager
 public void setOnClickListener(View.OnClickListener l, int... ids)
 
 * 复杂的书写格式
-![](https://ww1.sinaimg.cn/large/006tNc79gy1ff2wct9y99j30dc05gdg1.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gy1ff2wct9y99j30dc05gdg1.jpg)
 非与或非的符号则用此格式
 ```
 String a,

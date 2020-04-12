@@ -13,7 +13,7 @@ categories:
 
 事件传递的总结图
 
-![](https://ww3.sinaimg.cn/large/006tKfTcly1fo26sk3xr9j319r10cabx.jpg)
+![](http://ww3.sinaimg.cn/large/006tKfTcly1fo26sk3xr9j319r10cabx.jpg)
 
 https://www.processon.com/diagraming/5a72ba1be4b0874437b58c4f
 
@@ -23,6 +23,22 @@ https://www.processon.com/diagraming/5a72ba1be4b0874437b58c4f
 ## 处理特殊图形点击事件的几种方式 : 
 
 通过path绘制特殊的点击范围, 放入Region中 然后通过contains是否包含即可
+
+```
+    public boolean isEventInPath(int xPos, int yPos) {
+        // 判断手指是否在字幕框内
+        RectF r = new RectF();
+        Path path = new Path();
+        path.moveTo(x,y);
+        path.lineTo(x,y);
+        ...
+        path.close();
+        path.computeBounds(r, true);
+        Region region = new Region();
+        region.setPath(path, new Region((int) r.left, (int) r.top, (int) r.right, (int) r.bottom)); //path与正切矩形做 交集，最后就是编程path的region
+        return region.contains(xPos, yPos);
+    }
+```
 
 ### 兼容onClick1:
     

@@ -15,7 +15,7 @@ categories:
 <!-- more -->
 
 # 逻辑图
-![](https://ww4.sinaimg.cn/large/006tNbRwly1fbvwziewhij31kw0okgq0.jpg)
+![](http://ww4.sinaimg.cn/large/006tNbRwly1fbvwziewhij31kw0okgq0.jpg)
 
 # BaseActivity
 

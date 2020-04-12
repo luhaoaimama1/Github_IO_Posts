@@ -13,7 +13,7 @@ categories:
 
 # 图解
 
-![](https://ww3.sinaimg.cn/large/006tKfTcgy1fdnifh0enlj30to0phmxn.jpg)
+![](http://ww3.sinaimg.cn/large/006tKfTcgy1fdnifh0enlj30to0phmxn.jpg)
 
 <!-- more -->
 
