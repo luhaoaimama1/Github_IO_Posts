@@ -1,6 +1,6 @@
 cd blog
 
-hexo c
+hexo clean
 
 hexo g
 

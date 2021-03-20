@@ -17,7 +17,7 @@ categories:
 # 官方合成图
 > 如正确姿势的图，首先要明白的
 
-![](http://ww2.sinaimg.cn/large/006tKfTcgw1fb8yigv0rqj30m80f8my1.jpg)
+![](https://ww2.sinaimg.cn/large/006tKfTcgw1fb8yigv0rqj30m80f8my1.jpg)
 
 ![](https://tva1.sinaimg.cn/large/006y8mN6gy1g7lz5u1zw6j313e0m8n1g.jpg)
  查看PorterDuff类 。 官方先draw 黄色的 然后draw 蓝色的 ，
